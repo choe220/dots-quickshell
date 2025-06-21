@@ -64,6 +64,7 @@ Scope { // Scope
                     anchors.left: parent.left
                     anchors.right: parent.right
                     hoverEnabled: true
+                    visible: ConfigOptions.dock.visible
 
                     Behavior on anchors.topMargin {
                         animation: Appearance.animation.elementMoveFast.numberAnimation.createObject(this)

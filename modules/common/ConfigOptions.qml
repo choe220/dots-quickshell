@@ -72,6 +72,7 @@ Singleton {
     }
 
     property QtObject dock: QtObject {
+        property bool visible: true
         property real height: 60
         property real hoverRegionHeight: 3
         property bool pinnedOnStartup: false
