@@ -197,7 +197,9 @@ Item {
             iconSize: Appearance.font.pixelSize.normal
             color: Appearance.m3colors.m3onSecondaryContainer
             
-            // Rotation animation for loading state
+            // Reset rotation when not loading
+            rotation: isLoading ? rotation : 0
+            
             RotationAnimation {
                 target: weatherIconSymbol
                 property: "rotation"

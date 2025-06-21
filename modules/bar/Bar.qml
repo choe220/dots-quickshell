@@ -248,7 +248,7 @@ Scope {
                         ClockWidget {
                             showDate: (ConfigOptions.bar.verbose && barRoot.useShortenedForm < 2)
                             Layout.alignment: Qt.AlignVCenter
-                            // Layout.fillWidth: true
+                            Layout.fillWidth: true
                         }
 
                         UtilButtons {
@@ -260,11 +260,12 @@ Scope {
                             visible: (barRoot.useShortenedForm < 2 && UPower.displayDevice.isLaptopBattery)
                             Layout.alignment: Qt.AlignVCenter
                         }
+                    }
 
-                        VerticalBarSeparator {
-                            visible: ConfigOptions?.bar.borderless && weatherWidget.visible
-                        }
-
+                    BarGroup {
+                        id: rightRightGroup
+                        Layout.fillHeight: true
+                        
                         WeatherWidget {
                             visible: barRoot.useShortenedForm < 2
                             Layout.alignment: Qt.AlignVCenter
