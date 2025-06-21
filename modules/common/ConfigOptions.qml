@@ -65,6 +65,10 @@ Singleton {
             property bool alwaysShowNumbers: false
             property int showNumberDelay: 300 // milliseconds
         }
+        property QtObject weather: QtObject {
+            property string city: ""
+            property string tempPreference: ""
+        }
     }
 
     property QtObject dock: QtObject {

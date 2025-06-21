@@ -261,9 +261,12 @@ Scope {
                             Layout.alignment: Qt.AlignVCenter
                         }
 
-                        VerticalBarSeparator {visible: ConfigOptions?.bar.borderless}
+                        VerticalBarSeparator {
+                            visible: ConfigOptions?.bar.borderless && weatherWidget.visible
+                        }
 
                         WeatherWidget {
+                            visible: barRoot.useShortenedForm < 2
                             Layout.alignment: Qt.AlignVCenter
                         }
                     }
