@@ -74,6 +74,7 @@ Singleton {
         property QtObject weather: QtObject {
             property string city: ""
             property string tempPreference: ""
+        }
     }
 
     property QtObject battery: QtObject {

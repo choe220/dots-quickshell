@@ -240,6 +240,16 @@ Scope {
 
                     VerticalBarSeparator {visible: ConfigOptions?.bar.borderless}
 
+                    BarGroup {
+                        id: rightRightGroup
+                        Layout.fillHeight: true
+                        
+                        WeatherWidget {
+                            visible: barRoot.useShortenedForm < 2
+                            Layout.alignment: Qt.AlignVCenter
+                        }
+                    }
+
                     MouseArea {
                         id: rightCenterGroup
                         implicitWidth: rightCenterGroupContent.implicitWidth
@@ -270,15 +280,6 @@ Scope {
                                 visible: (barRoot.useShortenedForm < 2 && UPower.displayDevice.isLaptopBattery)
                                 Layout.alignment: Qt.AlignVCenter
                             }
-                        }
-
-                    BarGroup {
-                        id: rightRightGroup
-                        Layout.fillHeight: true
-                        
-                        WeatherWidget {
-                            visible: barRoot.useShortenedForm < 2
-                            Layout.alignment: Qt.AlignVCenter
                         }
                     }
 
@@ -489,5 +490,4 @@ Scope {
 
     }
 
-}
 }
