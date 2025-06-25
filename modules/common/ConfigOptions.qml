@@ -16,6 +16,9 @@ Singleton {
     property QtObject appearance: QtObject {
         property int fakeScreenRounding: 2 // 0: None | 1: Always | 2: When not fullscreen
         property bool transparency: false
+        property QtObject palette: QtObject {
+            property string type: "auto" // Allowed: auto, scheme-content, scheme-expressive, scheme-fidelity, scheme-fruit-salad, scheme-monochrome, scheme-neutral, scheme-rainbow, scheme-tonal-spot
+        }
     }
 
     property QtObject audio: QtObject { // Values in %
@@ -36,10 +39,10 @@ Singleton {
         property string terminal: "kitty -1" // This is only for shell actions
     }
 
-    property QtObject battery: QtObject {
-        property int low: 20
-        property int critical: 5
-        property int suspend: 2
+    property QtObject background: QtObject {
+        property bool fixedClockPosition: false
+        property real clockX: -500
+        property real clockY: -500
     }
 
     property QtObject bar: QtObject {
@@ -59,6 +62,9 @@ Singleton {
             property bool showMicToggle: false
             property bool showKeyboardToggle: true
         }
+        property QtObject tray: QtObject {
+            property bool monochromeIcons: true
+        }
         property QtObject workspaces: QtObject {
             property int shown: 10
             property bool showAppIcons: true
@@ -68,7 +74,12 @@ Singleton {
         property QtObject weather: QtObject {
             property string city: ""
             property string tempPreference: ""
-        }
+    }
+
+    property QtObject battery: QtObject {
+        property int low: 20
+        property int critical: 5
+        property int suspend: 2
     }
 
     property QtObject dock: QtObject {
@@ -145,6 +156,10 @@ Singleton {
         // https://doc.qt.io/qt-6/qtime.html#toString
         property string format: "hh:mm"
         property string dateFormat: "dddd, dd/MM"
+    }
+
+    property QtObject windows: QtObject {
+        property bool showTitlebar: true // Client-side decoration for shell apps
     }
 
     property QtObject hacks: QtObject {
