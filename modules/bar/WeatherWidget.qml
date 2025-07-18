@@ -216,7 +216,7 @@ Item {
             
             StyledText {
                 id: tempText
-                text: isLoading ? "..." : weatherTemp
+                text: isLoading ? "loading ..." : weatherTemp
                 font.pixelSize: Appearance.font.pixelSize.large
                 color: Appearance.colors.colOnLayer1
             }
